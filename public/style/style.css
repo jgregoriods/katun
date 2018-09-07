@@ -1,0 +1,7 @@
+body {
+  background-image: url("../img/bgPalenque.JPG");
+  background-attachment: fixed;
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
