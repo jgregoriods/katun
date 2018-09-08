@@ -26,9 +26,8 @@ class JulianForm extends Component {
     const era = (year > 0) ? true : false;
 
     return (
-      <div className="card mt-1 shadow bg-light col-md-6">
+      <div className="card mt-1 shadow bg-light">
         <p className="form-title">Julian Calendar</p>
-        <p>{day} {month} {year} {String(era)}</p>
         <form>
           <div className="form-row">
             <div className="col">

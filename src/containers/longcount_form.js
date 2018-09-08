@@ -16,9 +16,8 @@ class LongCountForm extends Component {
     const haab = this.props.mayaDate.getHaab();
 
     return (     
-      <div className="card bg-light mt-1 shadow col-md-6">
+      <div className="card bg-light mt-1 shadow">
         <p className="form-title">Long Count</p>
-        <p>{this.props.mayaDate.getLongCount().join('.')}</p>
         <form>
           <div className="form-row">
             <div className="col">
