@@ -6,7 +6,11 @@ import { changeLongCount } from '../actions/index';
 
 class LongCountForm extends Component {
   render() {
-    return (
+    const longCount = this.props.mayaDate.getLongCount();
+    const tzolkin = this.props.mayaDate.getTzolkin();
+    const haab = this.props.mayaDate.getHaab();
+
+    return (     
       <div className="card bg-light mt-1 shadow col-md-6">
         <p className="form-title">Long Count</p>
         <p>{this.props.mayaDate.longCount.join('.')}</p>
@@ -14,7 +18,7 @@ class LongCountForm extends Component {
           <div className="form-row">
             <div className="col">
               <input
-                value={this.props.mayaDate.longCount[0]}
+                value={longCount[0]}
                 onChange={(event) => this.props.changeLongCount(0, event.target.value)}
                 className="form-control"
                 type="number"
@@ -24,7 +28,7 @@ class LongCountForm extends Component {
             </div>
             <div className="col">
               <input
-                value={this.props.mayaDate.longCount[1]}
+                value={longCount[1]}
                 onChange={(event) => this.props.changeLongCount(1, event.target.value)}
                 className="form-control"
                 type="number"
@@ -34,7 +38,7 @@ class LongCountForm extends Component {
             </div>
             <div className="col">
               <input
-                value={this.props.mayaDate.longCount[2]}
+                value={longCount[2]}
                 onChange={(event) => this.props.changeLongCount(2, event.target.value)}
                 className="form-control"
                 type="number"
@@ -44,7 +48,7 @@ class LongCountForm extends Component {
             </div>
             <div className="col">
               <input
-                value={this.props.mayaDate.longCount[3]}
+                value={longCount[3]}
                 onChange={(event) => this.props.changeLongCount(3, event.target.value)}
                 className="form-control"
                 type="number"
@@ -54,7 +58,7 @@ class LongCountForm extends Component {
             </div>
             <div className="col">
               <input
-                value={this.props.mayaDate.longCount[4]}
+                value={longCount[4]}
                 onChange={(event) => this.props.changeLongCount(4, event.target.value)}
                 className="form-control"
                 type="number"
@@ -67,7 +71,12 @@ class LongCountForm extends Component {
         <div className="form-group row">
           <label htmlFor="calendarRound" className="col col-form-label">Calendar Round</label>
           <div className="col">
-            <input type="text" id="calendarRound" className="form-control" value={`${this.props.mayaDate.tzolkin.join(' ')} ${this.props.mayaDate.haab.join(' ')}`}/>
+            <input
+              value={`${tzolkin.join(' ')} ${haab.join(' ')}`}
+              type="text"
+              id="calendarRound"
+              className="form-control"
+            />
           </div>
         </div>
       </div>

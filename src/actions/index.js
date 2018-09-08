@@ -13,18 +13,32 @@ export function changeConstant(value) {
   }
 }
 
-export function changeGregorian(index, value) {
+export function changeGregorian(index, value, era) {
   return {
     type: 'GREGORIAN_CHANGED',
     index,
-    value
+    value,
+    era
   }
 }
 
-export function changeJulian(index, value) {
+export function toggleGregorianEra() {
+  return {
+    type: 'GREGORIAN_ERA_CHANGED'
+  }
+}
+
+export function changeJulian(index, value, era) {
   return {
     type: 'JULIAN_CHANGED',
     index,
-    value
+    value,
+    era
+  }
+}
+
+export function toggleJulianEra() {
+  return {
+    type: 'JULIAN_ERA_CHANGED'
   }
 }

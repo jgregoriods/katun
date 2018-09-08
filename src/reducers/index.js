@@ -11,4 +11,4 @@ const rootReducer = combineReducers({
   julianDate: JulianReducer
 });
 
-export default rootReducer;
+export default rootReducer; 
