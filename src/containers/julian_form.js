@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { changeJulian } from '../actions/index';
 
 class JulianForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      day: 1,
-      month: 0,
-      year: 2018,
-      era: 'CE'
-    }
-  }
-
   render() {
     return (
       <div className="card mt-1 shadow bg-light col-md-6">
         <p className="form-title">Julian Calendar</p>
+        <p>{this.props.julianDate.day} {this.props.julianDate.month} {this.props.julianDate.year} {this.props.julianDate.era}</p>
         <form>
           <div className="form-row">
             <div className="col">
               <input
-                value={this.state.day}
-                onChange={event => this.setState( {day: event.target.value} )}
+                value={this.props.julianDate.day}
+                onChange={(event) => this.props.changeJulian('day', event.target.value)}
                 type="number"
                 className="form-control"
                 min={1}
@@ -29,8 +24,8 @@ class JulianForm extends Component {
             </div>
             <div className="col">
               <select
-                value={this.state.month}
-                onChange={event => this.setState( {month: event.target.value} )}
+                value={this.props.julianDate.month}
+                onChange={(event) => this.props.changeJulian('month', event.target.value)}
                 className="custom-select"
               >
                 <option value={0}>Jan</option>
@@ -49,8 +44,8 @@ class JulianForm extends Component {
             </div>
             <div className="col">
               <input
-                value={this.state.year}
-                onChange={event => this.setState({ year: event.target.value })}
+                value={this.props.julianDate.year}
+                onChange={(event) => this.props.changeJulian('year', event.target.value)}
                 type="number"
                 className="form-control"
                 min={1}
@@ -58,8 +53,8 @@ class JulianForm extends Component {
             </div>
             <div className="col">
               <select
-                value={this.state.era}
-                onChange={event => this.setState({ era: event.target.value })}                
+                value={this.props.julianDate.era}
+                onChange={(event) => this.props.changeJulian('era', event.target.value)}
                 className="custom-select"
               >
                 <option value="CE">CE</option>
@@ -73,4 +68,14 @@ class JulianForm extends Component {
   }
 };
 
-export default JulianForm;
+function mapStateToProps(state) {
+  return {
+    julianDate: state.julianDate
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ changeJulian: changeJulian }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(JulianForm);

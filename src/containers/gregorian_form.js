@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { changeGregorian } from '../actions/index';
 
 class GregorianForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      day: 1,
-      month: 0,
-      year: 2018,
-      era: 'CE'
-    }
-  }
-
   render() {
     return (
       <div className="card mt-1 shadow bg-light col-md-6">
         <p className="form-title">Gregorian Calendar</p>
+        <p>{this.props.gregorianDate.day} {this.props.gregorianDate.month} {this.props.gregorianDate.year} {this.props.gregorianDate.era}</p>
         <form>
           <div className="form-row">
             <div className="col">
               <input
-                value={this.state.day}
-                onChange={event => this.setState( {day: event.target.value} )}
+                value={this.props.gregorianDate.day}
+                onChange={(event) => this.props.changeGregorian('day', event.target.value)}
                 type="number"
                 className="form-control"
                 min={1}
@@ -29,8 +24,8 @@ class GregorianForm extends Component {
             </div>
             <div className="col">
               <select
-                value={this.state.month}
-                onChange={event => this.setState( {month: event.target.value} )}
+                value={this.props.gregorianDate.month}
+                onChange={(event) => this.props.changeGregorian('month', event.target.value)}
                 className="custom-select"
               >
                 <option value={0}>Jan</option>
@@ -49,8 +44,8 @@ class GregorianForm extends Component {
             </div>
             <div className="col">
               <input
-                value={this.state.year}
-                onChange={event => this.setState({ year: event.target.value })}
+                value={this.props.gregorianDate.year}
+                onChange={(event) => this.props.changeGregorian('year', event.target.value)}
                 type="number"
                 className="form-control"
                 min={1}
@@ -58,8 +53,8 @@ class GregorianForm extends Component {
             </div>
             <div className="col">
               <select
-                value={this.state.era}
-                onChange={event => this.setState({ era: event.target.value })}                
+                value={this.props.gregorianDate.era}
+                onChange={(event) => this.props.changeGregorian('era', event.target.value)}
                 className="custom-select"
               >
                 <option value="CE">CE</option>
@@ -73,4 +68,14 @@ class GregorianForm extends Component {
   }
 };
 
-export default GregorianForm;
+function mapStateToProps(state) {
+  return {
+    gregorianDate: state.gregorianDate
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ changeGregorian: changeGregorian }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GregorianForm);
