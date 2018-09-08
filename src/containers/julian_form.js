@@ -2,9 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { changeJulian, toggleJulianEra } from '../actions/index';
+import { changeJulian, toggleJulianEra, updateGregorian, updateMaya } from '../actions/index';
 
 class JulianForm extends Component {
+  handleChange = async(event) => {
+    const era = this.props.julianDate.getFullYear() > 0 ? true : false;
+    await this.props.changeJulian(+event.target.id, +event.target.value, era);
+    await this.props.updateGregorian(this.props.julianDate);
+    this.props.updateMaya(this.props.gregorianDate, this.props.constant);
+  }
+
+  toggleEra = async() => {
+    await this.props.toggleJulianEra();
+    await this.props.updateGregorian(this.props.julianDate);
+    this.props.updateMaya(this.props.gregorianDate, this.props.constant);
+  }
+
   render() {
     const day = this.props.julianDate.getDate();
     const month = this.props.julianDate.getMonth();
@@ -21,9 +34,10 @@ class JulianForm extends Component {
             <div className="col">
               <input
                 value={day}
-                onChange={(event) => this.props.changeJulian(2, event.target.value, era)}
+                onChange={this.handleChange}
                 type="number"
                 className="form-control"
+                id={2}
                 min={1}
                 max={31}
               />
@@ -31,8 +45,9 @@ class JulianForm extends Component {
             <div className="col">
               <select
                 value={month}
-                onChange={(event) => this.props.changeJulian(1, event.target.value, era)}
+                onChange={this.handleChange}
                 className="custom-select"
+                id={1}
               >
                 <option value={0}>Jan</option>
                 <option value={1}>Feb</option>
@@ -51,20 +66,21 @@ class JulianForm extends Component {
             <div className="col">
               <input
                 value={formatedYear}
-                onChange={(event) => this.props.changeJulian(0, event.target.value, era)}
+                onChange={this.handleChange}
                 type="number"
                 className="form-control"
+                id={0}
                 min={1}
               />
             </div>
             <div className="col">
               <select
-                value={this.props.julianDate.era}
-                onChange={(event) => this.props.toggleJulianEra()}
+                value={era}
+                onChange={this.toggleEra}
                 className="custom-select"
               >
-                <option value="CE">CE</option>
-                <option value="BCE">BCE</option>
+                <option value={true}>CE</option>
+                <option value={false}>BCE</option>
               </select>
             </div>
           </div>
@@ -76,6 +92,8 @@ class JulianForm extends Component {
 
 function mapStateToProps(state) {
   return {
+    constant: state.constant,
+    gregorianDate: state.gregorianDate,
     julianDate: state.julianDate
   };
 }
@@ -83,7 +101,9 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     changeJulian: changeJulian,
-    toggleJulianEra: toggleJulianEra
+    toggleJulianEra: toggleJulianEra,
+    updateGregorian: updateGregorian,
+    updateMaya: updateMaya
   }, dispatch);
 }
 
