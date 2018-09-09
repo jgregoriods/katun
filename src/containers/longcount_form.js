@@ -14,8 +14,8 @@ class LongCountForm extends Component {
     const longCount = this.props.mayaDate.getLongCount();
 
     return (     
-      <div className="card mt-1 shadow">
-        <p className="form-title">Long Count</p>
+      <div className="katun-widget card border-0 mt-2 shadow">
+        <p className="form-title text-center mb-0">Long Count</p>
         <form>
           <div className="form-row">
             <div className="col">

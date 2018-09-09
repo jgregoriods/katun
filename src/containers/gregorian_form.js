@@ -26,8 +26,8 @@ class GregorianForm extends Component {
     const era = year > 0 ? true : false;
 
     return (
-      <div className="card mt-1 shadow">
-        <p className="form-title">Gregorian Calendar</p>
+      <div className="katun-widget card border-0 mt-2 shadow">
+        <p className="form-title mb-0 text-center">Gregorian Calendar</p>
         <form>
           <div className="form-row">
             <div className="col">

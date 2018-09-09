@@ -1,10 +1,32 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-import GlyphButtons from './glyph_buttons';
+import { changeLongCount, updateWestern } from '../actions/index';
+import GlyphButtons from '../components/glyph_buttons';
 import Glyph from '../components/glyph';
 
 class GlyphPanel extends Component {
+  changeMaya = (action, index) => {
+    const longCount = this.props.mayaDate.getLongCount();
+
+    if (action === 'increment' && index !== 3 && longCount[index] < 19) {
+      this.props.changeLongCount(index, longCount[index] + 1);
+    } else if (action === 'increment' && index === 3 && longCount[index] < 17) {
+      this.props.changeLongCount(index, longCount[index] + 1);
+    } else if (action === 'decrement' && longCount[index] > 0) {
+      this.props.changeLongCount(index, longCount[index] - 1);
+    }
+  }
+
+  handleClick = async(event) => {
+    const action = event.target.name;
+    const index = +event.target.id;
+
+    await this.changeMaya(action, index);
+    this.props.updateWestern(this.props.mayaDate, this.props.constant);
+  }
+
   render() {
     const longCount = this.props.mayaDate.getLongCount();
     const tzolkin = this.props.mayaDate.getTzolkin();
@@ -12,10 +34,10 @@ class GlyphPanel extends Component {
     const lordOfNight = this.props.mayaDate.getLordOfNight();
 
     return (
-      <div className="mt-1">
+      <div className="mt-2 mb-2">
         <div className="row">
           <div className="col">
-            <GlyphButtons index={0} />
+            <GlyphButtons onClick={this.handleClick} index={0} />
           </div>
           <div className="col">
             <Glyph category="long-count" longCount={longCount} index={0} />
@@ -24,12 +46,12 @@ class GlyphPanel extends Component {
             <Glyph category="long-count" longCount={longCount} index={1} />
           </div>
           <div className="col">
-            <GlyphButtons index={1} />
+            <GlyphButtons onClick={this.handleClick} index={1} />
           </div>
         </div>
         <div className="row">
           <div className="col">
-            <GlyphButtons index={2} />
+            <GlyphButtons onClick={this.handleClick} index={2} />
           </div>
           <div className="col">
             <Glyph category="long-count" longCount={longCount} index={2} />
@@ -38,12 +60,12 @@ class GlyphPanel extends Component {
             <Glyph category="long-count" longCount={longCount} index={3} />
           </div>
           <div className="col">
-            <GlyphButtons index={3} />
+            <GlyphButtons onClick={this.handleClick} index={3} />
           </div>
         </div>
         <div className="row">
           <div className="col">
-            <GlyphButtons index={4} />
+            <GlyphButtons onClick={this.handleClick} index={4} />
           </div>
           <div className="col">
             <Glyph category="long-count" longCount={longCount} index={4} />
@@ -70,8 +92,16 @@ class GlyphPanel extends Component {
 
 function mapStateToProps(state) {
   return {
-    mayaDate: state.mayaDate
+    mayaDate: state.mayaDate,
+    constant: state.constant
   };
 }
 
-export default connect(mapStateToProps)(GlyphPanel);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({
+    changeLongCount: changeLongCount,
+    updateWestern: updateWestern
+  }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GlyphPanel);

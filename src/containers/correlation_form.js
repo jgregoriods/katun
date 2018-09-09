@@ -12,10 +12,10 @@ class CorrelationForm extends Component {
 
   render() {
     return (
-      <div className="card shadow mt-1">
-        <div className="form-group row">
-          <label htmlFor="correlationConstant" className="col col-form-label">Constant</label>
-          <div className="col">
+      <div className="katun-widget card border-0 shadow mt-2">
+        <div className="form-group row mb-0">
+          <label htmlFor="correlationConstant" className="col-4 col-form-label">Constant</label>
+          <div className="col-8">
             <input
               value={this.props.constant}
               onChange={this.handleChange}
