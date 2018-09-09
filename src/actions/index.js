@@ -21,7 +21,7 @@ export function changeConstant(value) {
   return {
     type: CHANGE_CONSTANT,
     value
-  }
+  };
 }
 
 export function updateWestern(mayaDate, constant) {
@@ -29,7 +29,7 @@ export function updateWestern(mayaDate, constant) {
     type: UPDATE_WESTERN,
     mayaDate,
     constant
-  }
+  };
 }
 
 export function changeGregorian(index, value, era) {
@@ -38,13 +38,13 @@ export function changeGregorian(index, value, era) {
     index,
     value,
     era
-  }
+  };
 }
 
 export function toggleGregorianEra() {
   return {
     type: TOGGLE_GREG_ERA
-  }
+  };
 }
 
 export function updateMaya(gregorianDate, constant) {
@@ -52,14 +52,14 @@ export function updateMaya(gregorianDate, constant) {
     type: UPDATE_MAYA,
     gregorianDate,
     constant
-  }
+  };
 }
 
 export function updateJulian(gregorianDate) {
   return {
     type: UPDATE_JULIAN,
     gregorianDate
-  }
+  };
 }
 
 export function changeJulian(index, value, era) {
@@ -68,18 +68,18 @@ export function changeJulian(index, value, era) {
     index,
     value,
     era
-  }
+  };
 }
 
 export function toggleJulianEra() {
   return {
     type: TOGGLE_JUL_ERA
-  }
+  };
 }
 
 export function updateGregorian(julianDate) {
   return {
     type: UPDATE_GREGORIAN,
     julianDate
-  }
+  };
 }
