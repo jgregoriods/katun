@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
 import LongCountForm from '../containers/longcount_form';
+import CalendarRound from '../containers/calendar_round';
 import CorrelationForm from '../containers/correlation_form';
 import GregorianForm from '../containers/gregorian_form';
 import JulianForm from '../containers/julian_form';
-import GlyphPanel from '../containers/glyph_panel';
+import GlyphPanel from './glyph_panel';
 
 export default class App extends Component {
   render() {
@@ -15,6 +16,7 @@ export default class App extends Component {
         </div>
         <div className="col-md-6">
           <LongCountForm />
+          <CalendarRound />
           <CorrelationForm />
           <GregorianForm />
           <JulianForm />

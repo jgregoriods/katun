@@ -12,7 +12,7 @@ class CorrelationForm extends Component {
 
   render() {
     return (
-      <div className="card shadow mt-1 bg-light">
+      <div className="card shadow mt-1">
         <div className="form-group row">
           <label htmlFor="correlationConstant" className="col col-form-label">Constant</label>
           <div className="col">

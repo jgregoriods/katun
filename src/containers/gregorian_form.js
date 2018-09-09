@@ -26,7 +26,7 @@ class GregorianForm extends Component {
     const era = year > 0 ? true : false;
 
     return (
-      <div className="card mt-1 shadow bg-light">
+      <div className="card mt-1 shadow">
         <p className="form-title">Gregorian Calendar</p>
         <form>
           <div className="form-row">

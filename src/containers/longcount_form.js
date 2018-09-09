@@ -12,17 +12,15 @@ class LongCountForm extends Component {
 
   render() {
     const longCount = this.props.mayaDate.getLongCount();
-    const tzolkin = this.props.mayaDate.getTzolkin();
-    const haab = this.props.mayaDate.getHaab();
 
     return (     
-      <div className="card bg-light mt-1 shadow">
+      <div className="card mt-1 shadow">
         <p className="form-title">Long Count</p>
         <form>
           <div className="form-row">
             <div className="col">
               <input
-                value={longCount[0]}
+                value={longCount[0].toString()}
                 onChange={this.handleChange}
                 className="form-control"
                 type="number"
@@ -33,7 +31,7 @@ class LongCountForm extends Component {
             </div>
             <div className="col">
               <input
-                value={longCount[1]}
+                value={longCount[1].toString()}
                 onChange={this.handleChange}
                 className="form-control"
                 type="number"
@@ -44,7 +42,7 @@ class LongCountForm extends Component {
             </div>
             <div className="col">
               <input
-                value={longCount[2]}
+                value={longCount[2].toString()}
                 onChange={this.handleChange}
                 className="form-control"
                 type="number"
@@ -55,7 +53,7 @@ class LongCountForm extends Component {
             </div>
             <div className="col">
               <input
-                value={longCount[3]}
+                value={longCount[3].toString()}
                 onChange={this.handleChange}
                 className="form-control"
                 type="number"
@@ -66,7 +64,7 @@ class LongCountForm extends Component {
             </div>
             <div className="col">
               <input
-                value={longCount[4]}
+                value={longCount[4].toString()}
                 onChange={this.handleChange}
                 className="form-control"
                 type="number"
@@ -77,17 +75,6 @@ class LongCountForm extends Component {
             </div>
           </div>
         </form>
-        <div className="form-group row">
-          <label htmlFor="calendarRound" className="col col-form-label">Calendar Round</label>
-          <div className="col">
-            <input
-              value={`${tzolkin.join(' ')} ${haab.join(' ')}`}
-              type="text"
-              id="calendarRound"
-              className="form-control"
-            />
-          </div>
-        </div>
       </div>
     );
   }
