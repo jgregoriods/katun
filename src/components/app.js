@@ -5,7 +5,7 @@ import CalendarRound from '../containers/calendar_round';
 import CorrelationForm from '../containers/correlation_form';
 import GregorianForm from '../containers/gregorian_form';
 import JulianForm from '../containers/julian_form';
-import GlyphPanel from './glyph_panel';
+import GlyphPanel from '../containers/glyph_panel';
 
 export default class App extends Component {
   render() {

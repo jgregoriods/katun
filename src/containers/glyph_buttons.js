@@ -31,7 +31,7 @@ class GlyphButtons extends Component {
         <button
           onClick={this.handleClick}
           type="button"
-          className="btn btn-primary shadow"
+          className="btn btn-primary shadow mr-1"
           id="increment"
         >+</button>
         <button
