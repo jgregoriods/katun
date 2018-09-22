@@ -20,5 +20,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://5manikg7.github.io/katun/"
+  "homepage": "https://5manikg7.github.io/katun-long-count/"
 }
