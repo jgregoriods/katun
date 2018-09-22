@@ -35,7 +35,7 @@ class GlyphPanel extends Component {
 
     return (
       <div className="mt-2 mb-2">
-        <div className="row">
+        <div className="row mb-1">
           <div className="col">
             <GlyphButtons onClick={this.handleClick} index={0} />
           </div>
@@ -49,7 +49,7 @@ class GlyphPanel extends Component {
             <GlyphButtons onClick={this.handleClick} index={1} />
           </div>
         </div>
-        <div className="row">
+        <div className="row mb-1">
           <div className="col">
             <GlyphButtons onClick={this.handleClick} index={2} />
           </div>
@@ -63,7 +63,7 @@ class GlyphPanel extends Component {
             <GlyphButtons onClick={this.handleClick} index={3} />
           </div>
         </div>
-        <div className="row">
+        <div className="row mb-1">
           <div className="col">
             <GlyphButtons onClick={this.handleClick} index={4} />
           </div>

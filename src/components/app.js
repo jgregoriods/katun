@@ -12,7 +12,7 @@ export default class App extends Component {
     return (
       <div>
         <div className="header">
-          <p className="align-bottom">Long </p><img src="../img/lc_icon.png"/><p className="align-bottom"> Count</p>
+          <p className="align-bottom">Long </p><img src="./img/lc_icon.png"/><p className="align-bottom"> Count</p>
         </div>
         <div className="row">
           <div className="col-md-6">

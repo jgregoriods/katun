@@ -6,18 +6,18 @@ export default class GlyphButtons extends Component {
       <div>
         <button
           type="button"
-          className="btn btn-info border-0 shadow-sm"
+          className="btn glyph-btn mr-1 border-0 shadow-sm"
           name="increment"
           id={this.props.index}
           onClick={this.props.onClick}
-        >+</button>
+        >⯅</button>
         <button
           type="button"
-          className="btn btn-info border-0 shadow-sm"
+          className="btn glyph-btn border-0 shadow-sm"
           name="decrement"
           id={this.props.index}
           onClick={this.props.onClick}
-        >-</button>
+        >⯆</button>
       </div>
     );
   }

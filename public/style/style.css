@@ -1,22 +1,18 @@
 body {
-  background-image: url("../img/bgPalenque.JPG");
+  background-image: url("../img/bgCopan.jpg");
   background-attachment: fixed;
   background-position: right top;
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Open Sans Light' !important;
+  font-family: 'Open Sans', Calibri, sans-serif !important;
 }
 
 html {
   font-size: 3.5vw !important;
 }
 
-.menu-background {
-  background-image: url("../img/bgCopan.jpg");
-}
-
 .header {
-  background: #532337;
+  background: rgb(82,70,86);
   text-align: center;
   margin-bottom: 1vw;
   padding: 1vw;
@@ -37,28 +33,28 @@ html {
 }
 
 .katun-widget {
-  background: #BC283E;
+  background: rgb(207,71,71);
   color: white;
   text-transform: uppercase;
 }
 
 input,
 select {
-  border: 1px solid #BC283E !important;
+  border: 2px solid rgb(207,71,71) !important;
+}
+
+.glyph-btn {
+  font-size: 1.5vw;
+  color: white;
+  background: rgb(166,196,188);
+}
+
+.glyph-btn:hover {
+  background: rgb(106,157,143) !important;
 }
 
 .glyph {
   max-height: 8vw;
-}
-
-.menu-buton {
-  text-align: center;
-}
-
-.menu-button img {
-  margin: 0 auto;
-  display: block;
-  max-height: 5vw;
 }
 
 @media only screen and (min-width: 700px) {
@@ -79,7 +75,7 @@ select {
   }
 
   .glyph {
-    max-height: 6vw;
+    max-height: 5.7vw;
   }
 
   .bottom a {
@@ -88,5 +84,9 @@ select {
 
   .menu-button img {
     max-height: 12vw;
+  }
+
+  .glyph-btn {
+    font-size: 1.8vw;
   }
 }
