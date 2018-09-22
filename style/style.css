@@ -1,5 +1,5 @@
 body {
-  background-image: url("../img/bgPalenque.JPG");
+  background-image: url("./img/bgPalenque.JPG");
   background-attachment: fixed;
   background-position: right top;
   background-repeat: no-repeat;
@@ -9,10 +9,6 @@ body {
 
 html {
   font-size: 3.5vw !important;
-}
-
-.menu-background {
-  background-image: url("../img/bgCopan.jpg");
 }
 
 .header {
