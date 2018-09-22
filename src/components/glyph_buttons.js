@@ -10,14 +10,14 @@ export default class GlyphButtons extends Component {
           name="increment"
           id={this.props.index}
           onClick={this.props.onClick}
-        >⯅</button>
+        >&#x25B2;</button>
         <button
           type="button"
           className="btn glyph-btn border-0 shadow-sm"
           name="decrement"
           id={this.props.index}
           onClick={this.props.onClick}
-        >⯆</button>
+        >&#x25BC;</button>
       </div>
     );
   }
