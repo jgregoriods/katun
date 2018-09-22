@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { changeLongCount, updateWestern } from '../actions/index';
+import { changeLongCount, updateWestern } from '../actions';
 
 class LongCountForm extends Component {
   handleChange = async(event) => {

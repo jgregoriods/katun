@@ -11,6 +11,10 @@ html {
   font-size: 3.5vw !important;
 }
 
+.menu-background {
+  background-image: url("../img/bgCopan.jpg");
+}
+
 .header {
   background: #532337;
   text-align: center;
@@ -47,6 +51,16 @@ select {
   max-height: 8vw;
 }
 
+.menu-buton {
+  text-align: center;
+}
+
+.menu-button img {
+  margin: 0 auto;
+  display: block;
+  max-height: 5vw;
+}
+
 @media only screen and (min-width: 700px) {
   html {
     font-size: 1.3vw !important;
@@ -70,5 +84,9 @@ select {
 
   .bottom a {
     font-size: 2vw !important;
+  }
+
+  .menu-button img {
+    max-height: 12vw;
   }
 }

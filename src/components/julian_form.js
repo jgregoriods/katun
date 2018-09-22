@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { changeJulian, toggleJulianEra, updateGregorian, updateMaya } from '../actions/index';
+import { changeJulian, toggleJulianEra, updateGregorian, updateMaya } from '../actions';
 
 class JulianForm extends Component {
   handleChange = async(event) => {

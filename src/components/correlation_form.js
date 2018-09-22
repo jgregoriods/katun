@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { changeConstant, updateWestern } from '../actions/index';
+import { changeConstant, updateWestern } from '../actions';
 
 class CorrelationForm extends Component {
   handleChange = async(event) => {

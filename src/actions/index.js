@@ -8,6 +8,7 @@ export const UPDATE_JULIAN = 'UPDATE_JULIAN';
 export const CHANGE_JULIAN = 'CHANGE_JULIAN';
 export const TOGGLE_JUL_ERA = 'TOGGLE_JUL_ERA';
 export const UPDATE_GREGORIAN = 'UPDATE_GREGORIAN';
+export const CHANGE_DISTANCE_NUMBER = 'CHANGE_DISTANCE_NUMBER';
 
 export function changeLongCount(index, value) {
   return {
@@ -15,14 +16,14 @@ export function changeLongCount(index, value) {
     index,
     value
   };
-}
+};
 
 export function changeConstant(value) {
   return {
     type: CHANGE_CONSTANT,
     value
   };
-}
+};
 
 export function updateWestern(mayaDate, constant) {
   return {
@@ -30,7 +31,7 @@ export function updateWestern(mayaDate, constant) {
     mayaDate,
     constant
   };
-}
+};
 
 export function changeGregorian(index, value, era) {
   return {
@@ -39,13 +40,13 @@ export function changeGregorian(index, value, era) {
     value,
     era
   };
-}
+};
 
 export function toggleGregorianEra() {
   return {
     type: TOGGLE_GREG_ERA
   };
-}
+};
 
 export function updateMaya(gregorianDate, constant) {
   return {
@@ -53,14 +54,14 @@ export function updateMaya(gregorianDate, constant) {
     gregorianDate,
     constant
   };
-}
+};
 
 export function updateJulian(gregorianDate) {
   return {
     type: UPDATE_JULIAN,
     gregorianDate
   };
-}
+};
 
 export function changeJulian(index, value, era) {
   return {
@@ -69,17 +70,25 @@ export function changeJulian(index, value, era) {
     value,
     era
   };
-}
+};
 
 export function toggleJulianEra() {
   return {
     type: TOGGLE_JUL_ERA
   };
-}
+};
 
 export function updateGregorian(julianDate) {
   return {
     type: UPDATE_GREGORIAN,
     julianDate
   };
-}
+};
+
+export function changeDistanceNumber(index, value) {
+  return {
+    type: CHANGE_DISTANCE_NUMBER,
+    index,
+    value
+  };
+};

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { changeLongCount, updateWestern } from '../actions/index';
-import GlyphButtons from '../components/glyph_buttons';
-import Glyph from '../components/glyph';
+import { changeLongCount, updateWestern } from '../actions';
+import GlyphButtons from './glyph_buttons';
+import Glyph from './glyph';
 
 class GlyphPanel extends Component {
   changeMaya = (action, index) => {
