@@ -8,7 +8,7 @@
     "react-dom": "^16.5.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5",
+    "react-scripts": "^3.4.3",
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5"
   },
@@ -20,5 +20,17 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://5manikg7.github.io/katun/"
+  "homepage": "https://5manikg7.github.io/katun/",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
